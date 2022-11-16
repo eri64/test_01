@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\Study\qianduan\lib\axios.min.js"></script>
+    <script src="D:\Study\qianduan\lib\jQuery.min.js"></script>
+</head>
+
+<body>
+
+    <!-- <input type="file" id="file1">
+    <button id="btnUpload">Upload</button>
+    <img src="" alt="" id="img" width="800"> -->
+    <script>
+        // var jsonStr = '{"a":"hello","b":"world"}'
+        // var obj = JSON.parse(jsonStr)
+
+        // var a = JSON.stringify(obj)
+
+        // var fd = new FormData()
+        // fd.append('uname','zs')
+        // console.log(typeof fd);
+
+        // var btnUpload = document.querySelector('#btnUpload')
+        // btnUpload.addEventListener('click',function() {
+        //     var files = document.querySelector('#file1').files
+        //     if(files.length<=0) {
+        //         return alert("you didn't choose file that you want to upload")
+        //     }
+        // })
+
+        // let fn = Symbol()
+        // const a = {
+        //     fun : function() {
+        //         console.log('hello');
+        //     }
+
+        //     ,fn : function() {
+        //         console.log('fuck you');
+        //     }
+        // }
+        // a.fn()
+        // a.fun();
+        // function gen() {
+        //     console.log('hl gn');
+        //     function a() {
+        //         d
+        //     }
+        // }
+        // var itr = gen();
+        // console.log(typeof itr);
+        // axios({
+        //     method: 'GET',
+        //     url: 'http://www.liulongbin.top:3006/api/get',
+        //     params: {
+        //         name: 'zs',
+        //         age: 20
+        //     }
+        // }).then(function (res) {
+        //     console.log(res.data);
+        // })
+
+        $(function () {
+            var angel = $('#angel')
+            var timer = null
+            $(document).on('mousemove', function (e) {
+                if (timer) { return }
+                timer = setTimeout(() => {
+                    // $(angel).css('left', e.pageX + 'px').css('top', e.pageY + 'px')
+                    console.log('k')
+                    timer = null
+                }, 160);
+            })
+        })
+    </script>
+</body>
+
+</html>

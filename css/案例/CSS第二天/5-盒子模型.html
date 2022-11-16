@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1.6 内边距 padding
+        如果盒子没有指定width/height，那padding不会撑大盒子
+        
+        1.7 外边距 margin
+        简写同padding 上右下左
+        外边距典型应用
+        可以让块级盒子水平居中
+        条件：
+        1、指定了width
+        2、左右外边距设置为auto
+        三种写法：
+        1、margin-left:auto; margin-right:auto;
+        2、margin: auto
+        3、margin: 0 auto; (*)
+        注意：
+        以上方法是让块级元素水平居中，
+        行内元素或者行内块级元素水平居中给其父元素添加text-align即可
+     -->
+
+     <style>
+        div {
+            background-color: #777777;
+            margin: 30px 20px 10px;
+            height: 200px;
+            width: 400px;
+        }
+     </style>
+     <div>
+
+     </div>
+
+     <!-- 
+        1.8 外边距合并
+        1、相邻块元素垂直外边距的合并
+        解决：尽量给一个盒子margin
+        2、嵌套块元素垂直外边距的塌陷
+
+        1.9 清除内外边距
+        * {
+            margin:0;
+            padding:0;
+        }
+        //CSS的第一行代码
+        行内元素尽量只设置左右边距
+      -->
+
+      <!-- 
+        圆角边框
+        border-radius:0 0 0 0;
+        (↖↗↘↙)
+       -->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1.1什么是复合选择器
+        后代选择器、子选择器、并集选择器、伪类选择器等
+        1.2后代选择器(包含选择器)
+        元素1 元素2 { 样式声明 }
+     -->
+    <style>
+        ol li {
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+     <ol>
+        <li>123</li>
+        <li>456</li>
+        <li><a href="#">aaa</li>
+    </ol>
+    <ol class="nav">
+        <li>123</li>
+        <li>456</li>
+        <li><a href="#">aaa</li>
+    </ol>
+    <style>
+        .nav li a {
+            color: yellow;
+        }
+    </style>
+
+    <!--
+         1.3子选择器 
+        元素1>元素2 { 样式声明 }
+        只选择子级，不选择孙级
+    -->
+    <!-- 
+        1.4并集选择器
+        元素1,元素2 { 样式声明 }
+     -->
+    <!-- 
+        1.5伪类选择器
+        1.6链接伪类选择器
+        a:link 未被访问的链接
+        a:visited 访问过的链接
+        a:hover 鼠标停留的
+        a:active 鼠标按下未弹起的
+        按LVHA的顺序
+    -->
+    <style>
+        a:link {
+            color: #333;
+        }
+    </style>
+
+    <!-- 
+        1.7focus伪类选择器
+        input:focus { background-color: blue; }
+        
+    -->
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="D:\Study\qianduan\bootstrap\css\bootstrap.css">
+    <script src="D:\Study\qianduan\javascript\jQuery\jQuery.min.js"></script>
+</head>
+<body style="padding: 15px;">
+    <!-- panel of adding book -->
+
+    <div class="panel panel-primary">
+          <div class="panel-heading">
+                <h3 class="panel-title">Adding Book</h3>
+          </div>
+          <div class="panel-body form-inline">
+            <div class="input-group">
+                <div class="input-group-addon">Book Name</div>
+                <input type="text" class="form-control" id="iptBookName" placeholder="Please input book name">
+            </div>
+            <div class="input-group">
+                <div class="input-group-addon">Author Name</div>
+                <input type="text" class="form-control" id="iptAuthorName" placeholder="Please input author name">
+            </div>            
+            <div class="input-group">
+                <div class="input-group-addon">Publisher Name</div>
+                <input type="text" class="form-control" id="iptPublisherName" placeholder="Please input publisher name">
+            </div>
+            <button id="btnAdd" class="btn btn-primary">Add</button>
+        </div>
+    </div>
+    
+    <!-- books table -->
+
+    
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Operate</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+        </tbody>
+    </table>
+
+    <script>
+        $(function () {
+            function getBookList() {
+                $.get('http://www.liulongbin.top:3006/api/getbooks', function(res) {
+                    if(res.status !== 200) return alert('get data failed!');
+
+                    var rows = [];
+                    $.each(res.data, function(i,item) {
+                        rows.push('<tr><td>'+item.id+'</td><td>'+item.bookname+'</td><td>'+item.author+'</td><td>'+item.publisher+'</td><td><a href="javascript:;" class="del" data-id="'+item.id+'">delete</td></tr>')
+                    })
+                    $('#tb').empty().append(rows);
+                })
+            }
+
+            getBookList();
+            
+            $('#tb').on('click','.del',function() {
+                var id = $(this).attr('data-id');
+                $.get('http://www.liulongbin.top:3006/api/delbook',{id:id},function(res) {
+                    if(res.status!==200) return alert('delete book failed!');
+                    getBookList();
+                })
+            })
+
+            $('#btnAdd').on('click', function () {
+                var bookname = $('#iptBookName').val().trim();
+                var author = $('#iptAuthorName').val().trim();
+                var publisher = $('#iptPublisherName').val().trim();
+                if(bookname.length <= 0 || author.length <= 0 || publisher.length <= 0 ) {
+                        return alert('Please enter complete book info!');
+                    }
+                $.post('http://www.liulongbin.top:3006/api/addbook',{bookname:bookname,author: author,publisher:publisher},function(res) {
+                    if(res.status!==201) return alert('Adding book failed!')
+                    getBookList();
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>

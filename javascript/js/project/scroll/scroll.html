@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .slider-bar {
+            width: 80px;
+            height: 160px;
+            position: absolute;
+            top: 200px;
+            left: 90%;
+            background-color: green;
+        }
+        .goBack {
+            display: none;
+        }
+        header {
+            width: 80%;
+            height: 160px;
+            margin: 0 auto;
+            background-color: #9a40ff;
+        }
+        .banner {
+            width: 80%;
+            height: 300px;
+            margin: 10px auto;
+            background-color: #9a40ff;
+        }
+        main {
+            width: 80%;
+            height: 800px;
+            margin: 10px auto;
+            background-color: #00de81;
+        }
+        .arrow_l,
+        .arrow_r {
+            display: none;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            width: 24px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            color: white;
+        }
+        .arrow_r {
+            /* left: 1343px;; */
+            left: 98.5%;
+        }
+        .focus {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        .focus ul {
+            width: 500%;
+        }
+        .focus ul li {
+            float: left;
+        }
+        .focus ul li img {   
+            width: 63%;
+        }
+        ol {
+            position: absolute;
+            left: 50%;
+            top: 280px;
+            border-radius: 5px;
+            background-color: rgba(255,255,255,0.1);
+            z-index: 1;
+        }
+        ol li {
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin-left: 4px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, .3);
+            cursor: pointer;
+        }
+        .current {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+    <script src=".\js\index.js"></script>
+</head>
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <header></header>
+    <div class="banner">
+        <div class="focus">
+            <!-- left button -->
+            <a href="javascript():;" class="arrow_l">
+                &lt;
+            </a>
+            <!-- right button -->
+            <a href="javascript():;" class="arrow_r">
+                &gt;
+            </a>
+            <!-- core scroll area -->
+            <ul>
+                <li>
+                    <a href="#"><img src="https://img.alicdn.com/imgextra/i3/6000000000010/O1CN01ReiTgs1BwckOXbAqz_!!6000000000010-0-octopus.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.alicdn.com/imgextra/i4/6000000004885/O1CN0101FvmP1lxNZ8vWgR6_!!6000000004885-0-octopus.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.alicdn.com/imgextra/i4/6000000003872/O1CN01AxHfgt1eTQLmwCFTj_!!6000000003872-2-octopus.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.alicdn.com/imgextra/i1/6000000003517/O1CN01p0cN3P1bqpkXOI4F2_!!6000000003517-0-octopus.jpg" alt=""></a>
+                </li>
+            </ul>
+            <!-- little circle -->
+            <ol>
+            </ol>
+        </div>
+    </div>
+    <main></main>
+    <footer></footer>
+
+    <script>
+        var banner = document.querySelector('.banner');
+        var sliderbar = document.querySelector('.slider-bar');
+        var sliderbarTop = sliderbar.offsetTop - banner.offsetTop;
+
+        document.addEventListener('scroll', function() {
+            if(window.pageYOffset >= banner.offsetTop ) {
+                sliderbar.style.position = 'fixed';
+                sliderbar.style.top = sliderbarTop + 'px';
+            } else {
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = '200px';
+            }
+        })
+    </script>
+</body>
+</html>

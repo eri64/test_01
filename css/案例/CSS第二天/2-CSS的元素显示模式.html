@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        2.1 什么是元素显示模式
+        元素（标签）以什么方式进行显示
+        HTML元素一般分为块元素和行内元素
+
+        2.2块元素
+        <h1>~<h6> <p> <div> <ul> <ol> <li>
+        特点：
+        1、独占一行
+        2、高、宽、外边距、内边距可控制
+        3、宽度默认是容器（父级宽度）的100%
+        4、是一个容器，里面可以放行内或者块级元素
+        注意：
+        1、文字类元素内不能放块级元素
+        2、<p>标签内不能放块级元素，特别是<div>
+        3、同理，<h1>~<h6>也不行
+    -->
+
+    <style>
+        div { background-color: red; }
+    </style>
+    <div>
+        aaa
+    </div>
+
+    <!-- 
+        2.2 行内元素
+        <a> <strong> <b> <em> <i> <del> <s> <ins> <u> <span>
+        也称内联元素
+        特点：
+        1、相邻行内元素在行上，一行可以显示多个
+        2、高、宽直接设置是无效的
+        3、默认宽度就是它本身内容的宽度
+        4、行内元素只能容纳文本或其他行内元素
+        注意：
+        链接里面不能放链接
+     -->
+
+    <!-- 
+        2.3 行内块元素
+        <img /> <input /> <td>
+        同时具有块元素和行内元素的特点
+        特点：
+        1、空白缝隙
+        2、默认宽度就是它本身内容的宽度
+        3、高度、行高、外边距及内边距都可以控制
+     -->
+
+     <!-- 
+        display: block          (*)
+        display: inline
+        display: inline-block   (*)
+      -->
+
+      <!-- 
+        2.7 垂直居中技巧
+        行高=盒子高度
+        line-height=height
+       -->
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\Study\qianduan\javascript\jQuery\jQuery.min.js"></script>
+</head>
+<body>
+    <button>get with arguments</button>
+    <script>
+    $(function () {
+        $('button').on('click', function() {
+            $.post('http://www.liulongbin.top:3006/api/addbook', {bookname: 'book', author:'author', publisher: 'publisher'}, function(res) {
+            console.log(res);
+            })
+        })
+    })
+    </script>
+</body>
+</html>

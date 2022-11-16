@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1.1 为什么需要精灵图
+        减少服务器负载，提高加载速度
+        
+        1.2 精灵图 sprites
+        background-position:-...
+        background:url() no-repeat -xxx -xxx;
+
+        字体图标
+        icomoon.io
+        iconfont.cn
+
+        CSS三角
+     -->
+    <style>
+        .box1 {
+            width: 0;
+            height: 0;
+            border-top: 10px solid #000;
+            border-bottom: 10px solid #000;
+            border-left: 10px solid #f00;
+            border-right: 10px solid #f00;
+        }
+        .box2 {
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom-color: red;
+        }
+    </style>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

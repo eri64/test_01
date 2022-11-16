@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        2.2 浮动布局注意点
+        1.浮动和标准流的父盒子搭配
+        2.一个元素浮动了，理论上其余兄弟元素也要浮动
+            浮动盒子只会影响后面的标准流，不会影响前面的标准流
+        
+        3 清除浮动
+        3.1 为什么要清楚浮动
+        由于父级盒子很多情况下，不方便给高度，但是子盒子浮动又不占有位置，最后父盒子高度为0，会影响到下面的标准流盒子。
+        3.2 清除浮动本质
+        ·清除浮动元素造成的影响
+        ·如果父级盒子本身有高度，则不需要清除浮动
+        ·清除浮动后，父级会根据浮动的盒子自动检测高度，父级有了高度，就不会影响下面的标准流
+        3.3 清除浮动
+        选择器 {clear:属性值;}
+        left right both
+        3.3清除浮动四种方法
+        1、额外标签法
+        在浮动元素末尾加一个空标签，<div style="clear:both;"></div>
+        优点：通俗易懂，书写方便
+        缺点：添加许多无意义的标签，结构化较差
+        注意：新的空标签必须是块级元素
+        2、给父级元素添加overflow
+        属性：hidden、auto、scroll
+        优点：代码简洁
+        缺点：无法显示溢出的部分
+        3、:after伪元素法
+        给父元素添加
+        .clearfix:after {
+            content: "";
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .clearfix { /* IE6、7专有 */
+        *zoom: 1;
+        }
+        4、双伪元素清除浮动
+        给父元素添加
+        .clearfix:before,
+        .clearfix:after{
+            content:"";
+            display:table;
+        }
+        .clearfix:after{
+            clear:both;
+        }
+        .clearfix{
+            *zoom: 1;
+        }
+        优点：代码更简洁
+        缺点：照顾低版本浏览器
+     -->
+</body>
+</html>
